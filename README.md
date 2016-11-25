@@ -1,5 +1,5 @@
 ## YoRPG
-   Swashbucking RPG game through the comfort of your terminal. Defeat the evil Smaug Monsters :japanese ogre: and free the land! Onward Young Adventurer!
+   Swashbucking RPG game through the comfort of your terminal. Defeat the evil Smaug Monsters :japanese_ogre: and free the land! Onward Young Adventurer!
 
 # Cool Features
 1. Choose your Difficulty Level
@@ -16,7 +16,7 @@
 1. Clone repo
 2. "cd" into the repo through the terminal
 3. Compile the YoRPG Java file by typing into the command line:
-   javac YoRPG.java
+   *javac YoRPG.java*
 4. Run the Java file by typing:
-   java YoRPG
+   *java YoRPG*
 5. Have fun!
