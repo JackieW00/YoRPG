@@ -4,13 +4,15 @@ public class Monster{
 	private int strength;
 	private int defense;
 	private double attackRating;
-
+    private int distance;
+    
 	public Monster(){
 		HP = 20;
-		// range [2,16)
+		// range [2,20)
 		strength = (int)(Math.random()*18) + 2;
 		defense = 2;
 		attackRating = 1;
+        distance = (int)(Math.random()*5);
 	}
 	
 	//am I alive?
@@ -18,21 +20,29 @@ public class Monster{
 		return HP > 0;
 	}
 	
-	//Access defense
+	//Accessors
 	public int getDefense(){
 		return defense;
 	}
-	
+	public int getDistance(){
+        return distance;
+    }
+    //mutator
+    public void setDistance(int newDist){
+        distance = newDist;
+    }
 	
 	//lowerHP by hit number
 	public void lowerHP(int hit){
-		HP = HP - hit;
+        HP = HP - hit;
 	}
 	
 	//attack warrior method
 	public int attack (Object w){
 		double damage = (strength*attackRating) - ((Character)w).getDefense();
-		((Character)w).lowerHP((int)damage);
+		if (damage<0)
+            damage = 0;
+        ((Character)w).lowerHP((int)damage);
         return (int)damage;
 	}
 }

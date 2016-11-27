@@ -32,4 +32,12 @@ public class Mage extends Character{
     	retstr += "\tMage Guild: Tap into this land's magic to oppose enemies with the elements\n";
  		return retstr;
     }
+    public boolean isCloseEnough(int dist){
+        if(dist>2)
+            return false;
+        else{
+            attackRating = 3 - dist; //harder to damage from a distance
+            return true;
+        }
+    }
 }

@@ -31,4 +31,7 @@ public class Warrior extends Character{
     	retstr += "\tWarrior Guild: Slay your enemies with the fatal blow of your might sword\n";
  		return retstr;
     }
+    public boolean isCloseEnough(int dist){
+        return dist<=3;
+    }
 }

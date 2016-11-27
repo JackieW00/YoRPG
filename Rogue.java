@@ -31,4 +31,7 @@ public class Rogue extends Character{
     	retstr += "\tRogue Guild: Use your nimbleness to backstab and steal precious items from your foes\n";
  		return retstr;
     }
+    public boolean isCloseEnough(int dist){
+        return dist<=2;
+    }
 }

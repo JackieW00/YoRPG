@@ -6,11 +6,11 @@ public abstract class Character {
     protected int defense;
     protected double attackRating;
     protected String name;
-    
     //abstract methods
     public abstract void normalize();
     public abstract void specialize();
     public abstract String about();
+    public abstract boolean isCloseEnough(int dist);
     // Constructors
     /* public Character() {
 	   HP = 125;
@@ -55,19 +55,25 @@ public abstract class Character {
     }
 
     public int attack( Monster w ) {
+        if(isCloseEnough(w.getDistance())){
+            int damage = (int)( (strength * attackRating) - w.getDefense() );
+        
+            if ( damage < 0 )
+                damage = 0;
 
-		int damage = (int)( (strength * attackRating) - w.getDefense() );
-
-		if ( damage < 0 )
-	   	 	damage = 0;
-
-		w.lowerHP( damage );
-
-		return damage;
+            w.lowerHP( damage );
+            w.setDistance(w.getDistance()-1);//moves monster closer
+            return damage;
+        }
+        else{
+            System.out.println("You are too farz to hurt Monster");
+            w.setDistance(w.getDistance()-1);//moves monster closer
+            return 0;
+        }
     }//end attack
 
     public void lowerHP( int damage ) {
-		HP = HP - damage;
+        HP = HP - damage;
     }
     
     

@@ -31,4 +31,8 @@ public class Archer extends Character{
     	retstr += "\tArcher Guild: Use your eagle eye to shoot enemies from afar with your trusty bow and arrow\n";
  		return retstr;
     }
+    public boolean isCloseEnough(int dist){
+        attackRating = 5 - dist; //arrow does less damage if farther away
+        return true;
+    }
 }

@@ -31,4 +31,12 @@ public class Assassin extends Character{
     	retstr += "\tAssassin Guild: Travel swiftly through the night and deal your unsuspecting foes fatal hits\n";
  		return retstr;
     }
+    public boolean isCloseEnough(int dist){
+        if(dist>3)
+            return false;
+        else{
+            attackRating = 4 - dist; //harder to damage from a distance
+            return true;
+        }
+    }
 }
