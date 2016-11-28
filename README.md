@@ -4,8 +4,8 @@
 # Cool Features
 1. Choose your Difficulty Level
 2. 5 different characters to choose from!
-3. HP, attack rating, defense, strength, and name attributes for each character
-4. distance from the nearest monster
+3. HP, attack rating, defense, strength, name, and range attributes for each character
+4. Distance from the nearest monster
 
 # Code Structuring
   All code was written in Java. 
