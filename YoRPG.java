@@ -126,9 +126,11 @@ public class YoRPG
 
 			while( smaug.isAlive() && pat.isAlive() ) {
 
+
 				// Give user the option of using a special attack:
 				// If you land a hit, you incur greater damage,
 				// ...but if you get hit, you take more damage.
+			    
 				try {
 					System.out.println( "\nDo you feel lucky?" );
 					System.out.println( "\t1: Nay.\n\t2: Aye!" );
@@ -140,15 +142,42 @@ public class YoRPG
 					pat.specialize();
 				else
 					pat.normalize();
-
-				d1 = pat.attack( smaug );
-				d2 = smaug.attack( pat );
-
-				System.out.println( "\n" + pat.getName() + " dealt " + d1 +
+				
+				//-------------------------------------------------------
+			        //Attack Stage
+				if (pat.inRange(smaug)){
+				    d1 = pat.attack( smaug );
+				    System.out.println( "\n" + pat.getName() + " dealt " + d1 +
 							" points of damage.");
 
-				System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+				    d2 = smaug.attack( pat );
+				
+				    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
 							" for " + d2 + " points of damage.");
+				}
+				else{
+				    d1 = 0;
+				    try {
+					System.out.println( "\nYou Missed!" );
+					
+					d2 = smaug.attack( pat );
+					System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+							" for " + d2 + " points of damage.");
+					
+					System.out.println("\nApproach thy Monster?");
+					System.out.println( "\t1: Nay.\n\t2: Aye!" );
+					i = Integer.parseInt( in.readLine() );
+				    }
+				    catch ( IOException e ) { }
+
+				    if ( i == 2 )
+					smaug.moveCloser();
+				    
+				}
+
+
+				//-----------------------------------------------------------------------
+			       
 			}//end while
 
 			//option 1: you & the monster perish

@@ -4,7 +4,7 @@ public class Monster{
 	private int strength;
 	private int defense;
 	private double attackRating;
-    private int distance;
+        private int distance; // represents distance from player
     
 	public Monster(){
 		HP = 20;
@@ -12,7 +12,7 @@ public class Monster{
 		strength = (int)(Math.random()*18) + 2;
 		defense = 2;
 		attackRating = 1;
-        distance = (int)(Math.random()*5);
+		distance = (int)(Math.random()*5); //interval [0,4]
 	}
 	
 	//am I alive?
@@ -27,9 +27,12 @@ public class Monster{
 	public int getDistance(){
         return distance;
     }
-    //mutator
+    //mutators
     public void setDistance(int newDist){
         distance = newDist;
+    }
+    public void moveCloser(){
+	distance -= 1;
     }
 	
 	//lowerHP by hit number

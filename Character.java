@@ -76,6 +76,8 @@ public abstract class Character {
         HP = HP - damage;
     }
     
-    
+    public boolean inRange (Monster m){
+	return isCloseEnough(m.getDistance());
+    }
 
 }//end class Character
