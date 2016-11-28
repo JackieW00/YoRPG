@@ -31,7 +31,7 @@ public class Monster{
     public void setDistance(int newDist){
         distance = newDist;
     }
-    public void moveCloser(){
+    public void moveCloser(){ //allows player to step closer to monster if not already close enough
 	distance -= 1;
     }
 	
