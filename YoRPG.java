@@ -165,7 +165,7 @@ public class YoRPG
 							" for " + d2 + " points of damage.");
 					
 					System.out.println("\nApproach thy Monster?");
-					System.out.println( "\t1: Nay.\n\t2: Aye!" );
+					System.out.println( "\t1: Nay.\n\t2: Aye!" ); //what to do if user decides not to move closer?
 					i = Integer.parseInt( in.readLine() );
 				    }
 				    catch ( IOException e ) { }
